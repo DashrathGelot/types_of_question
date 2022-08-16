@@ -1,0 +1,33 @@
+1. Count the number of intervals in which a given value lies
+
+=========
+
+-> interval_data = [[1,7], [5,11], [7,9]] elems = [7, 1, 5, 10, 9, 15]
+
+-> output: [3, 1, 2, 1, 2, 0]
+
+-> brute force is traverse with all elems and check with every interval_data is elem lies between that or not?
+
+-> now think in reverse way is there any way so we can build some kind of table where we can direct look up for any number is lies between any interval
+
+-> try to build that table
+
+-> here we build freq_table: 
+	
+
+	[0,0,0,0,0,0,0,0,0, 0, 0, 0,0,0,0,0,0,0,0,0,0]
+	[1,2,3,4,5,6,7,8,9,10,11]
+
+	think for interval [1,7] we can say that elements lies between 1 and 7 is one times cause it has single interval
+	for interval [5,11] now there is overlap like 5 to 7 is comes under 1 to 7 as well so between 5 to 7 elems count as 2 but, for rest of 8 to 11 still has one 
+
+	likewise we have to create entire lookup array for any given number how many times lies in interval
+	after creating table we got below one
+
+	->
+
+	freq:  [1,1,1,1,2,2,3,0,2, 1, 1]
+	index: [1,2,3,4,5,6,7,8,9,10,11]
+
+
+here is question : https://www.geeksforgeeks.org/count-the-number-of-intervals-in-which-a-given-value-lies/
